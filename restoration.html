@@ -29,9 +29,6 @@
       .kv {
         border-left: 3px solid var(--accent);
       }
-      .aspect-ratio-16\/10 {
-        padding-bottom: 62.5%; /* 10 / 16 * 100 */
-      }
     }
   </style>
 </head>
@@ -76,28 +73,34 @@
   <main>
     <section class="py-12 lg:py-24">
       <div class="container mx-auto max-w-7xl px-4">
-        <h1 class="text-3xl lg:text-5xl font-bold leading-tight mb-4 text-center md:text-left">Restoration</h1>
-        <p class="text-lg text-[var(--muted)] mb-10">Stage 1: Cleaning & structure inspection — 90% complete (Sept 2024). Stage 2: Coating & detailing — ongoing. Media kit production in parallel.</p>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div class="bg-[var(--card)] border border-white/6 rounded-2xl overflow-hidden">
-            <div class="aspect-ratio-16/10"><img src="assets/images/restoration_1.png" alt="Kraka restoration process: stripping and assessment" class="w-full h-full object-cover"/></div>
-            <div class="p-4">
-              <h3 class="text-xl mb-1">Stripping & Assessment</h3>
-              <p class="text-[var(--muted)]">Every plank, screw and fitting documented.</p>
+        <h1 class="text-3xl lg:text-5xl font-bold leading-tight mb-4 text-center">Restoration</h1>
+        <p class="text-2xl text-[var(--muted)] mb-10 text-center">Stage 1: Cleaning & structure inspection — 90% complete (Sept 2024). Stage 2: Coating & detailing — ongoing. Media kit production in parallel.</p>
+        <div class="flex flex-col gap-16">
+          <div class="bg-[var(--card)] rounded-2xl overflow-hidden grid grid-cols-1 md:grid-cols-2 items-end">
+            <div class="p-4 order-2 md:order-1 text-right">
+              <h3 class="text-4xl mb-1">Stripping & Assessment</h3>
+              <p class="text-2xl text-[var(--muted)]">Every plank, screw and fitting documented.</p>
+            </div>
+            <div class="h-64 order-1 md:order-2">
+              <img src="assets/images/restoration_1.png" alt="Kraka restoration process: stripping and assessment" class="w-full h-full object-cover"/>
             </div>
           </div>
-          <div class="bg-[var(--card)] border border-white/6 rounded-2xl overflow-hidden">
-            <div class="aspect-ratio-16/10"><img src="assets/images/woodwork.png" alt="Kraka restoration process: woodwork" class="w-full h-full object-cover"/></div>
+          <div class="bg-[var(--card)] rounded-2xl overflow-hidden grid grid-cols-1 md:grid-cols-2 items-end">
+            <div class="h-64">
+              <img src="assets/images/woodwork.png" alt="Kraka restoration process: woodwork" class="w-full h-full object-cover"/>
+            </div>
             <div class="p-4">
-              <h3 class="text-xl mb-1">Woodwork</h3>
-              <p class="text-[var(--muted)]">Replace only what’s not perfect; preserve all that’s sound.</p>
+              <h3 class="text-4xl mb-1">Woodwork</h3>
+              <p class="text-2xl text-[var(--muted)]">Replace only what’s not perfect; preserve all that’s sound.</p>
             </div>
           </div>
-          <div class="bg-[var(--card)] border border-white/6 rounded-2xl overflow-hidden">
-            <div class="aspect-ratio-16/10"><img src="assets/images/detailing_1.png" alt="Kraka restoration process: detailing" class="w-full h-full object-cover"/></div>
-            <div class="p-4">
-              <h3 class="text-xl mb-1">Detailing</h3>
-              <p class="text-[var(--muted)]">Original stainless hardware refurbished to shine.</p>
+          <div class="bg-[var(--card)] rounded-2xl overflow-hidden grid grid-cols-1 md:grid-cols-2 items-end">
+            <div class="p-4 order-2 md:order-1 text-right">
+              <h3 class="text-4xl mb-1">Detailing</h3>
+              <p class="text-2xl text-[var(--muted)]">Original stainless hardware refurbished to shine.</p>
+            </div>
+            <div class="h-64 order-1 md:order-2">
+              <img src="assets/images/detailing_1.png" alt="Kraka restoration process: detailing" class="w-full h-full object-cover"/>
             </div>
           </div>
         </div>
