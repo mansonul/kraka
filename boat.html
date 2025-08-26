@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kraka — The Boat</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style type="text/tailwindcss">
+    @layer base {
+      :root {
+        --primary: #004d00;
+        --accent: #ff7f00;
+        --bg: #0d0f0d;
+        --text: #f2f2f2;
+        --muted: #cbd5d1;
+        --card: #111611;
+      }
+      html, body {
+        background-color: var(--bg);
+        color: var(--text);
+        font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+      }
+      h1, h2, h3 {
+        font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+      }
+      .kv {
+        border-left: 3px solid var(--accent);
+      }
+      .aspect-ratio-16\/10 {
+        padding-bottom: 62.5%; /* 10 / 16 * 100 */
+      }
+    }
+  </style>
+</head>
+<body>
+  
+  <header class="sticky top-0 z-10 backdrop-blur-sm bg-black/60">
+    <div class="container mx-auto max-w-7xl px-4 py-3 flex items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <div class="w-16 h-16 rounded-full bg-[var(--primary)] flex items-center justify-center font-bold text-white overflow-hidden">
+          <img src="assets/images/Logo_Kraka.png" alt="Kraka logo" class="w-full h-full object-cover rounded-full" />
+        </div>
+      </div>
+      
+      <nav class="hidden md:flex items-center gap-6 text-lg">
+        <a href="index.html" class="opacity-95">Home</a>
+        <a href="boat.html" class="opacity-95 underline">The Boat</a>
+        <a href="restoration.html" class="opacity-95">Restoration</a>
+        <a href="gallery.html" class="opacity-95">Gallery</a>
+        <a href="about.html" class="opacity-95">About</a>
+        <a href="contact.html" class="px-5 py-2 border border-[var(--accent)] text-[var(--accent)] rounded-full text-base">Contact</a>
+      </nav>
+
+      <button id="menu-button" class="md:hidden p-2 rounded-lg text-white hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/50">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+      </button>
+
+      <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-black/80 backdrop-blur-md pb-4 pt-2">
+        <nav class="flex flex-col items-center gap-4 text-xl">
+          <a href="index.html" class="py-2 opacity-95">Home</a>
+          <a href="boat.html" class="py-2 opacity-95 underline">The Boat</a>
+          <a href="restoration.html" class="py-2 opacity-95">Restoration</a>
+          <a href="gallery.html" class="py-2 opacity-95">Gallery</a>
+          <a href="about.html" class="py-2 opacity-95">About</a>
+          <a href="contact.html" class="mt-2 px-5 py-2 border border-[var(--accent)] text-[var(--accent)] rounded-full text-base">Contact</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+    
+  <main>
+    <section class="py-12 lg:py-24">
+      <div class="container mx-auto max-w-7xl px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+          <div id="text-column" class="flex flex-col">
+            <h1 class="text-3xl lg:text-5xl font-bold leading-tight mb-4 text-center md:text-left">The Boat — NC‑krydser, 1963</h1>
+            <p class="text-lg text-[var(--muted)] mb-6">Designer: Carl Erik Ohlson (Olympic medalist). Model: NC‑krydser. Production: &lt; 100 units. Known survivors: ~10 worldwide.</p>
+            <ul class="list-disc list-inside space-y-2 text-lg text-[var(--muted)] pl-4">
+              <li>Length overall: ~9.5–10.5 m (model‑typical)</li>
+              <li>Beam: ~2.2–2.5 m (model‑typical)</li>
+              <li>Hull: Wood, restored to original</li>
+              <li>Rig: Sloop (classic)</li>
+              <li>Engine: To be specified post‑refit</li>
+            </ul>
+            <blockquote class="text-[var(--muted)] mt-6 kv pl-4">Note: Exact dimensions will be documented in the Technical Dossier delivered at handover.</blockquote>
+            <div class="my-6 w-full border-t border-white/10"></div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="bg-[var(--card)] border border-[var(--accent)] rounded-2xl p-4">
+                <div class="inline-block px-2 py-1 bg-[var(--primary)] rounded-full text-base text-[var(--accent)] font-bold">Pre‑restoration</div>
+                <strong class="text-2xl font-bold block mt-2">$49,000 USD*</strong>
+                <p class="kv pl-3 border-l-2 border-[var(--accent)] text-[var(--muted)] mt-2">Transport & taxes extra.</p>
+              </div>
+              <div class="bg-[var(--card)] border border-[var(--accent)] rounded-2xl p-4">
+                <div class="inline-block px-2 py-1 bg-[var(--primary)] rounded-full text-base text-[var(--accent)] font-bold">Post‑restoration</div>
+                <strong class="text-2xl font-bold block mt-2">$84,000 USD</strong>
+                <p class="kv pl-3 border-l-2 border-[var(--accent)] text-[var(--muted)] mt-2">Transport & taxes extra.</p>
+              </div>
+            </div>
+            <div class="mt-4 text-[var(--muted)] text-sm">*valid until October 1</div>
+            <a class="w-full text-center px-5 py-3 rounded-xl bg-[var(--accent)] text-black font-bold mt-6" href="contact.html">Enquire</a>
+          </div>
+          
+          <div id="image-column" class="bg-[var(--card)] rounded-2xl overflow-hidden">
+            <img src='assets/images/the_boat.jpg' alt='Boat detail' class="w-full h-full block object-cover"/>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <footer class="border-t border-white/8 py-8 text-[var(--muted)]">
+    <div class="container mx-auto max-w-7xl px-4">
+      <div>© <span data-year></span> Kraka — Reviving Legends, One Vessel At A Time</div>
+      <div class="mt-2">Colors: Dark Green #004d00, Orange #ff7f00</div>
+    </div>
+  </footer>
+
+  <script>
+    function setImageHeight() {
+        const textColumn = document.getElementById('text-column');
+        const imageColumn = document.getElementById('image-column');
+        
+        // Verifică dacă suntem pe un ecran de desktop
+        if (window.innerWidth >= 768) {
+            const textHeight = textColumn.offsetHeight;
+            imageColumn.style.height = `${textHeight}px`;
+        } else {
+            // Resetează înălțimea pe mobil
+            imageColumn.style.height = 'auto';
+        }
+    }
+
+    // Rulează funcția la încărcarea paginii și la redimensionare
+    window.addEventListener('load', setImageHeight);
+    window.addEventListener('resize', setImageHeight);
+
+    // Codul pentru meniul mobile și anul din footer
+    document.getElementById('menu-button').addEventListener('click', function() {
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    const yearSpan = document.querySelector('[data-year]');
+    if (yearSpan) {
+        const currentYear = new Date().getFullYear();
+        yearSpan.textContent = currentYear;
+    }
+</script>
+</body>
+</html>

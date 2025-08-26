@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kraka — About</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style type="text/tailwindcss">
+    @layer base {
+      :root {
+        --primary: #004d00;
+        --accent: #ff7f00;
+        --bg: #0d0f0d;
+        --text: #f2f2f2;
+        --muted: #cbd5d1;
+        --card: #111611;
+      }
+      html, body {
+        background-color: var(--bg);
+        color: var(--text);
+        font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+      }
+      h1, h2, h3 {
+        font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+      }
+      .kv {
+        border-left: 3px solid var(--accent);
+      }
+      .aspect-ratio-16\/10 {
+        padding-bottom: 62.5%; /* 10 / 16 * 100 */
+      }
+    }
+  </style>
+</head>
+<body>
+  
+  <header class="sticky top-0 z-10 backdrop-blur-sm bg-black/60">
+    <div class="container mx-auto max-w-7xl px-4 py-3 flex items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <div class="w-16 h-16 rounded-full bg-[var(--primary)] flex items-center justify-center font-bold text-white overflow-hidden">
+          <img src="assets/images/Logo_Kraka.png" alt="Kraka logo" class="w-full h-full object-cover rounded-full" />
+        </div>
+      </div>
+      
+      <nav class="hidden md:flex items-center gap-6 text-lg">
+        <a href="index.html" class="opacity-95">Home</a>
+        <a href="boat.html" class="opacity-95">The Boat</a>
+        <a href="restoration.html" class="opacity-95">Restoration</a>
+        <a href="gallery.html" class="opacity-95">Gallery</a>
+        <a href="about.html" class="opacity-95 underline">About</a>
+        <a href="contact.html" class="px-5 py-2 border border-[var(--accent)] text-[var(--accent)] rounded-full text-base">Contact</a>
+      </nav>
+
+      <button id="menu-button" class="md:hidden p-2 rounded-lg text-white hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/50">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+      </button>
+
+      <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-black/80 backdrop-blur-md pb-4 pt-2">
+        <nav class="flex flex-col items-center gap-4 text-xl">
+          <a href="index.html" class="py-2 opacity-95">Home</a>
+          <a href="boat.html" class="py-2 opacity-95">The Boat</a>
+          <a href="restoration.html" class="py-2 opacity-95">Restoration</a>
+          <a href="gallery.html" class="py-2 opacity-95">Gallery</a>
+          <a href="about.html" class="py-2 opacity-95 underline">About</a>
+          <a href="contact.html" class="mt-2 px-5 py-2 border border-[var(--accent)] text-[var(--accent)] rounded-full text-base">Contact</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+    
+  <main>
+    <section class="py-12 lg:py-24">
+      <div class="container mx-auto max-w-7xl px-4">
+        <h1 class="text-3xl lg:text-5xl font-bold leading-tight mb-4 text-center md:text-left">About Kraka</h1>
+        
+        <div class="w-full mb-8 rounded-2xl overflow-hidden">
+          <img src="assets/images/about_hero.jpg" alt="Kraka — 1963 NC‑krydser, detail" class="w-full h-96 object-cover"/>
+        </div>
+
+        <div class="prose lg:prose-xl mx-auto text-[var(--muted)]">
+          <p>Kraka is not just a boat, but a living story. Built in 1963 on the rare NC-krydser line, designed by the Olympian and visionary Carl Erik Ohlson, our ship carries in its wood fibers the echo of an era when elegance was carved with a chisel, and performance was born on the planchette and on the waves. Of the less than a hundred examples ever created, today no more than ten can be found in the world — and Kraka is the only one that has been restored, step by step, to the nobility of its original state.</p>
+          <p>We often say that good stories have the scent of truth and a shadow of myth. A thread of legend has been woven around Ohlson for decades: it is said that King Carl XVI Gustaf of Sweden commissioned sketches that ended up in his private collection and that an episode in his love story was discreetly witnessed by an Ohlson boat. We do not claim certainties — but the charm of the possible. And Kraka lives precisely in this space of emotion: where documented history touches the flutter of a royal cape and becomes inspiration.</p>
+          <p>Her restoration required the patience of a watchmaker and the tenderness of a luthier: every screw replaced with new stainless steel, every wooden cap refitted to its line, the original stainless steel polished until it catches the reflection of the sky, the furniture refurbished to preserve the patina, not the years. We kept everything that worked and refreshed it with today's materials only where necessary, so that the beauty of authenticity coexists with modern safety.</p>
+          <p>That is why the uniqueness of Kraka goes beyond the rigor of a rare model. This specimen is unique: its biographical path, the resonance of the name, the way the Wind Chimes and the twilight light intertwine on its side like in a family photo. It is a boat for someone who believes that a journey becomes a story when you find your character, and a character becomes immortal when it receives an audience. Kraka comes with its audience: people who have watched its rebirth, episodes that have documented its every stage, and a bundle of memories ready to be written.</p>
+          <p>We don't just sell a boat. We sell that rare feeling when, at the first breeze, you know you are exactly where you should be. And Kraka, in its quiet nobility, is waiting for you to continue its legend.</p>
+          <blockquote class="text-[var(--text)] mt-6 kv pl-4">Reviving Legends, One Vessel At A Time.</blockquote>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <footer class="border-t border-white/8 py-8 text-[var(--muted)]">
+    <div class="container mx-auto max-w-7xl px-4">
+      <div>© <span data-year></span> Kraka — Reviving Legends, One Vessel At A Time</div>
+      <div class="mt-2">Colors: Dark Green #004d00, Orange #ff7f00</div>
+    </div>
+  </footer>
+<script>
+    document.getElementById('menu-button').addEventListener('click', function() {
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    const yearSpan = document.querySelector('[data-year]');
+    if (yearSpan) {
+        const currentYear = new Date().getFullYear();
+        yearSpan.textContent = currentYear;
+    }
+</script>
+</body>
+</html>
