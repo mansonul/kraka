@@ -37,8 +37,29 @@
         padding-bottom: 62.5%; /* 10 / 16 * 100 */
       }
     }
-  
-  /* Stilizează paginarea - punctele se vor transforma în dreptunghiuri */
+
+  /* Containerul principal al caruselului */
+  .swiper {
+    width: 100%;
+  }
+
+  .swiper-pagination {
+    position: static; /* Asigură că este în fluxul normal al documentului */
+    transform: none; /* Anulează orice transformări implicite */
+    left: auto; /* Anulează orice poziționare absolută la stânga */
+    right: auto; /* Anulează orice poziționare absolută la dreapta */
+    bottom: auto; /* Anulează orice poziționare absolută la jos */
+    top: auto; /* Anulează orice poziționare absolută la sus */
+
+    display: flex; /* Folosim flexbox pentru a centra elementele */
+    justify-content: center; /* Centrare orizontală */
+    align-items: center; /* Centrare verticală (dacă paginarea ar avea înălțime variabilă) */
+    
+    margin-top: 2.5rem; /* Ajustează această valoare pentru a seta spațiul dorit sub carusel */
+    padding: 0; /* Asigură că nu există padding-uri implicite */
+    width: 100%; /* Ocupă toată lățimea disponibilă pentru centrare */
+  }
+
   .swiper-pagination-bullet {
     width: 24px; /* Lățimea dreptunghiului */
     height: 6px; /* Înălțimea dreptunghiului */
@@ -46,26 +67,14 @@
     background: var(--muted); /* Culoarea de fundal pentru punctele inactive */
     opacity: 0.8; /* Transparența punctelor inactive */
     transition: all 0.3s ease; /* Adaugă o tranziție fluidă pentru animație */
+    display: inline-block; /* Sau flex, dar inline-block e suficient aici */
+    margin: 0 4px; /* Spațiu orizontal între dreptunghiuri */
   }
-  
-  /* Stilizează dreptunghiul activ (selectat) */
+
   .swiper-pagination-bullet-active {
     width: 32px; /* Lățimea dreptunghiului activ, puțin mai mare */
     background: var(--primary); /* Culoarea de fundal pentru punctul activ */
-    opacity: 1; /* Opacitate completă pentru a ieși în evidență */
-  }
-
-  .swiper-pagination-bullets.swiper-pagination-horizontal {
-    bottom: var(--swiper-pagination-bottom,-45px);
-    top: var(--swiper-pagination-top,auto);
-    left: 0;
-    width: 100%;
-  }
-
-  @media (max-width: 768px) {
-    .swiper-pagination-bullets.swiper-pagination-horizontal {
-      bottom: var(--swiper-pagination-bottom,-595px);
-    }
+    opacity: 1;
   }
 
   </style>
@@ -202,13 +211,9 @@
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="mt-8 flex justify-between items-center px-4 md:px-0">
-          <!-- <div class="swiper-button-prev"></div> -->
-          <div class="swiper-pagination"></div>
-          <!-- <div class="swiper-button-next"></div> -->
         </div>
+        <div class="swiper-pagination mt-8 text-center"></div>
       </div>
     </section>
 
@@ -245,7 +250,7 @@
           <div class="relative w-full pb-[56.25%]">
             <video autoplay loop muted controls preload="metadata"
               class="absolute top-0 left-0 w-full h-full object-cover block" poster="assets/images/Logo_Kraka.png">
-              <source src="assets/video/kraka_home.webm" type="video/webm" />
+              <!-- <source src="assets/video/kraka_home.webm" type="video/webm" /> -->
               <source src="assets/video/kraka_home.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
