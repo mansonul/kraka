@@ -7,7 +7,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
+  
   <script src="https://cdn.tailwindcss.com"></script>
+  
   <style type="text/tailwindcss">
     @layer base {
       :root {
@@ -29,8 +31,47 @@
       .kv {
         border-left: 3px solid var(--accent);
       }
-      .aspect-ratio-16\/10 {
-        padding-bottom: 62.5%; /* 10 / 16 * 100 */
+      .gallery-item {
+        aspect-ratio: 16 / 10;
+        position: relative;
+        cursor: pointer;
+      }
+
+      /* Stilizarea pentru Lightbox */
+      #modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+      }
+
+      #modal-overlay.is-open {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      #modal-overlay img {
+        max-width: 90%;
+        max-height: 90vh;
+        object-fit: contain;
+      }
+
+      #close-button {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        color: white;
+        font-size: 2.5rem;
+        cursor: pointer;
       }
     }
   </style>
@@ -79,23 +120,23 @@
         <h1 class="text-3xl lg:text-5xl font-bold leading-tight mb-8 text-center md:text-left">Gallery</h1>
         
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          <div class="overflow-hidden rounded-2xl bg-[var(--card)] aspect-w-4 aspect-h-3">
-            <img src="assets/images/gallery_1.jpg" alt="Gallery image 1" class="w-full h-full object-cover"/>
+          <div class="overflow-hidden rounded-2xl bg-[var(--card)] gallery-item">
+            <img src="assets/images/about_hero.jpg" alt="Gallery image 1" class="w-full h-full object-cover absolute inset-0"/>
           </div>
-          <div class="overflow-hidden rounded-2xl bg-[var(--card)] aspect-w-4 aspect-h-3">
-            <img src="assets/images/gallery_2.jpg" alt="Gallery image 2" class="w-full h-full object-cover"/>
+          <div class="overflow-hidden rounded-2xl bg-[var(--card)] gallery-item">
+            <img src="assets/images/built_for_stories.png" alt="Gallery image 2" class="w-full h-full object-cover absolute inset-0"/>
           </div>
-          <div class="overflow-hidden rounded-2xl bg-[var(--card)] aspect-w-4 aspect-h-3">
-            <img src="assets/images/gallery_3.jpg" alt="Gallery image 3" class="w-full h-full object-cover"/>
+          <div class="overflow-hidden rounded-2xl bg-[var(--card)] gallery-item">
+            <img src="assets/images/woodwork.png" alt="Gallery image 3" class="w-full h-full object-cover absolute inset-0"/>
           </div>
-          <div class="overflow-hidden rounded-2xl bg-[var(--card)] aspect-w-4 aspect-h-3">
-            <img src="assets/images/gallery_4.jpg" alt="Gallery image 4" class="w-full h-full object-cover"/>
+          <div class="overflow-hidden rounded-2xl bg-[var(--card)] gallery-item">
+            <img src="assets/images/placeholder-3.jpg" alt="Gallery image 4" class="w-full h-full object-cover absolute inset-0"/>
           </div>
-          <div class="overflow-hidden rounded-2xl bg-[var(--card)] aspect-w-4 aspect-h-3">
-            <img src="assets/images/gallery_5.jpg" alt="Gallery image 5" class="w-full h-full object-cover"/>
+          <div class="overflow-hidden rounded-2xl bg-[var(--card)] gallery-item">
+            <img src="assets/images/restoration_2.png" alt="Gallery image 5" class="w-full h-full object-cover absolute inset-0"/>
           </div>
-          <div class="overflow-hidden rounded-2xl bg-[var(--card)] aspect-w-4 aspect-h-3">
-            <img src="assets/images/gallery_6.jpg" alt="Gallery image 6" class="w-full h-full object-cover"/>
+          <div class="overflow-hidden rounded-2xl bg-[var(--card)] gallery-item">
+            <img src="assets/images/detailing_1.png" alt="Gallery image 6" class="w-full h-full object-cover absolute inset-0"/>
           </div>
         </div>
       </div>
@@ -107,17 +148,66 @@
       <div>© <span data-year></span> Kraka — Reviving Legends, One Vessel At A Time</div>
     </div>
   </footer>
-<script>
+
+  <div id="modal-overlay">
+    <span id="close-button">&times;</span>
+    <img id="modal-image" src="" alt="Zoomed in gallery image">
+  </div>
+
+  <script>
+    // Script pentru meniul mobil (deja existent)
     document.getElementById('menu-button').addEventListener('click', function() {
         const mobileMenu = document.getElementById('mobile-menu');
         mobileMenu.classList.toggle('hidden');
     });
 
+    // Script pentru anul curent (deja existent)
     const yearSpan = document.querySelector('[data-year]');
     if (yearSpan) {
         const currentYear = new Date().getFullYear();
         yearSpan.textContent = currentYear;
     }
-</script>
+
+    // Noul script pentru lightbox
+    const galleryItems = document.querySelectorAll('.gallery-item img');
+    const modalOverlay = document.getElementById('modal-overlay');
+    const modalImage = document.getElementById('modal-image');
+    const closeButton = document.getElementById('close-button');
+
+    // Funcția pentru a deschide modalul
+    function openModal(imageSrc) {
+        modalImage.src = imageSrc;
+        modalOverlay.classList.add('is-open');
+    }
+
+    // Funcția pentru a închide modalul
+    function closeModal() {
+        modalOverlay.classList.remove('is-open');
+    }
+
+    // Adaugă un event listener pentru fiecare imagine
+    galleryItems.forEach(item => {
+        item.addEventListener('click', () => {
+            openModal(item.src);
+        });
+    });
+
+    // Adaugă event listener pentru butonul de închidere
+    closeButton.addEventListener('click', closeModal);
+
+    // Adaugă event listener pentru a închide modalul la click-ul în afara imaginii
+    modalOverlay.addEventListener('click', (e) => {
+        if (e.target === modalOverlay) {
+            closeModal();
+        }
+    });
+
+    // Adaugă event listener pentru a închide modalul la apăsarea tastei Esc
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modalOverlay.classList.contains('is-open')) {
+        closeModal();
+      }
+    });
+  </script>
 </body>
 </html>
